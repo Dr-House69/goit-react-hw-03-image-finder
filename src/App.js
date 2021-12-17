@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import PropTypes from "prop-types";
+
 import API from "./services/imageApi";
 import Searchbar from "./components/Searchbar/Searhbar";
 import ImageGallery from "./components/ImageGallery/ImageGallery";
@@ -20,17 +20,6 @@ class App extends Component {
     modalImage: "",
     alt: "",
     error: "",
-  };
-
-  static propTypes = {
-    query: PropTypes.string,
-    images: PropTypes.array,
-    page: PropTypes.number,
-    isLoading: PropTypes.bool,
-    openModal: PropTypes.bool,
-    modalImage: PropTypes.string,
-    alt: PropTypes.string,
-    error: PropTypes.string,
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -109,7 +98,7 @@ class App extends Component {
         {images.length > 0 && !error && (
           <>
             <ImageGallery openModal={this.onOpenModal} images={images} />
-            <Button fetchImages={this.onLoadMore} />
+            <Button handleClick={this.onLoadMore} />
           </>
         )}
         {openModal && (

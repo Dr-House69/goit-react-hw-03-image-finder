@@ -11,7 +11,7 @@ class Searchbar extends Component {
   };
 
   static propTypes = {
-    query: PropTypes.string,
+    onSubmit: PropTypes.func.isRequired,
   };
 
   handleQueryChange = (event) => {

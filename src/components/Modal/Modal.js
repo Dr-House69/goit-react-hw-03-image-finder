@@ -11,7 +11,9 @@ export default class Modal extends Component {
   };
 
   static propTypes = {
-    loading: PropTypes.bool,
+    onClose: PropTypes.func.isRequired,
+    src: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
   };
 
   componentDidMount() {
